@@ -3,12 +3,22 @@ package com.demo.controller;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.validation.constraints.PastOrPresent;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class Student {
 	
+	@Pattern(regexp="[^0-9]*")
+	@Size(min=2, max=30)
 	private String studentName;
+	
+	@Size(min=5, max=30)
 	private String studentHobby;
 	
 	private Long studentMobile;
+	
+	@PastOrPresent
 	private Date studentDOB;
 	private ArrayList<String> studentSkills;
 
